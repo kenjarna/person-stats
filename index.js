@@ -20,12 +20,5 @@ function changeHeading(ev) {
     paragraph.style.fontWeight = "bold"
 }
 
-function changetextcolor(ev) {
-    ev.preventDefault()
-    const f = ev.target
-
-
-}
-
 const personForm = document.querySelector('#person-form')
 personForm.addEventListener('submit', changeHeading)
