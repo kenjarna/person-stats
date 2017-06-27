@@ -1,24 +1,38 @@
-function changeHeading(ev) {
-    //dont let the page refresh before we can see the changes!!
+function handleSubmit(ev) {
     ev.preventDefault()
     const f = ev.target
-
-    //Grab the string submitted
     const name = f.personName.value
+    const age = f.personAge.value
+    const color = f.favoriteColor.value
 
-    //Grab the age submitted
-    const age = f.age.value
+    const div = document.querySelector('#stats')
 
-    //Grab the color submitted (if any)
-    const color = f.color.value
+    const list = document.createElement('ul')
 
-    const paragraph = document.querySelector('#pstats')
-    paragraph.textContent = name + ', ' + age
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${name}`
+    list.appendChild(nameItem)
 
-    paragraph.style.color = color
-    paragraph.style.fontSize = "X-Large"
-    paragraph.style.fontWeight = "bold"
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+    list.appendChild(ageItem)
+
+    const colorItem = document.createElement('li')
+    colorItem.textContent = 'Favorite Color: '
+
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = color
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    colorItem.appendChild(colorDiv)
+
+    list.appendChild(colorItem)
+
+    div.appendChild(list)
+
+    // div.innerHTML = '<p>' + name + ', age ' + age + '</p>'
+    // div.innerHTML = `<p style="background-color: ${color}">${name}, age ${age}</p>`
 }
 
 const personForm = document.querySelector('#person-form')
-personForm.addEventListener('submit', changeHeading)
+personForm.addEventListener('submit', handleSubmit)

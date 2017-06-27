@@ -7,7 +7,7 @@
     <title>Person Stats</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.0/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.0/css/foundation.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -18,28 +18,19 @@
         <p>
             <label for="personName">Name</label>
             <input type="text" name="personName">
-
-            <label for="age">Age</label>
-            <input type="number" name="age">
-
-            <br>
-
-            <p> If you would like to change the color of the text, please input a color (<em>no spaces or special characters</em>)! Otherwise, leave this spot blank. </p>
-            <label for="color">Color</label>
-            <input type="text" name="color">
         </p>
-
-        <</p>
-            <button type='submit'>Submit</button>
+        <p>
+            <label for="age">Age</label>
+            <input type="number" name="personAge">
+        </p>
+        <p>
+            <label for="favoriteColor">Favorite color</label>
+            <input type="color" name="favoriteColor">
+        </p>
+        <button type="submit">Go</button>
     </form>
 
-    <div id="stats">
-        <p id="pstats">
-            <font size="5">
-                The submitted name and age will appear here in the color your specified <br> (if no color was given, this text will be black)
-            </font>
-        </p>
-    </div>
+    <div id="stats"></div>
 
     <script src="index.js"></script>
 </body>
