@@ -16,15 +16,23 @@
         <p>
             <label for="personName">Name</label>
             <input type="text" name="personName">
+
             <label for="age">Age</label>
             <input type="text" name="age">
+            <br>
+
+            <p> If you would like to change the color of the text, please input a color (<em>no spaces or special characters</em>)! Otherwise, leave this spot blank. </p>
+            <label for="color">Color</label>
+            <input type="text" name="color">
         </p>
-        <button type='submit'>Go</button>
+        <button type='submit'>Submit</button>
     </form>
 
     <div id="stats">
         <p id="pstats">
-            Check this out buddy
+            <font size="5">
+                The submitted name and age will appear here in the color your specified <br> (if no color was given, this text will be black)
+            </font>
         </p>
     </div>
 
