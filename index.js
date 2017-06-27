@@ -30,8 +30,6 @@ function handleSubmit(ev) {
 
     div.appendChild(list)
 
-    // div.innerHTML = '<p>' + name + ', age ' + age + '</p>'
-    // div.innerHTML = `<p style="background-color: ${color}">${name}, age ${age}</p>`
 }
 
 const personForm = document.querySelector('#person-form')
