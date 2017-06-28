@@ -7,12 +7,7 @@ function handleSubmit(ev) {
 
     const div = document.querySelector('#stats')
 
-    const list = document.createElement('ul')
-
-    renderListItem(list, name, age, color)
-
-    div.appendChild(list)
-
+    div.appendChild(renderList(name, age, color))
 }
 
 function showcolor(color) {
@@ -25,20 +20,27 @@ function showcolor(color) {
     return colorDiv
 }
 
-function renderListItem(list, name, age, color) {
+function renderListItem() {
 
     const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${name}`
-    list.appendChild(nameItem)
+    return nameItem
 
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
-    list.appendChild(ageItem)
+}
 
-    const colorItem = document.createElement('li')
-    colorItem.textContent = 'Favorite Color: '
-    colorItem.appendChild(showcolor(color))
-    list.appendChild(colorItem)
+function renderList(name, age, color) {
+
+    const list = document.createElement('ul')
+    const item = []
+    for (i = 0; i < 3; i++) { item[i] = renderListItem() }
+
+    item[0].textContent = `Name: ${name}`
+    item[1].textContent = `Age: ${age}`
+    item[2].textContent = 'Favorite Color: '
+    item[2].appendChild(showcolor(color))
+
+    for (i = 0; i < 3; i++) { list.appendChild(item[i]) }
+
+    return list
 }
 
 const personForm = document.querySelector('#person-form')
