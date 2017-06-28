@@ -9,20 +9,7 @@ function handleSubmit(ev) {
 
     const list = document.createElement('ul')
 
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${name}`
-    list.appendChild(nameItem)
-
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
-    list.appendChild(ageItem)
-
-    const colorItem = document.createElement('li')
-    colorItem.textContent = 'Favorite Color: '
-
-    colorItem.appendChild(showcolor(color))
-
-    list.appendChild(colorItem)
+    renderListItem(list, name, age, color)
 
     div.appendChild(list)
 
@@ -38,8 +25,20 @@ function showcolor(color) {
     return colorDiv
 }
 
-function renderlistitem() {
+function renderListItem(list, name, age, color) {
 
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${name}`
+    list.appendChild(nameItem)
+
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+    list.appendChild(ageItem)
+
+    const colorItem = document.createElement('li')
+    colorItem.textContent = 'Favorite Color: '
+    colorItem.appendChild(showcolor(color))
+    list.appendChild(colorItem)
 }
 
 const personForm = document.querySelector('#person-form')
