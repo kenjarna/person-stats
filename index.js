@@ -20,15 +20,25 @@ function handleSubmit(ev) {
     const colorItem = document.createElement('li')
     colorItem.textContent = 'Favorite Color: '
 
-    const colorDiv = document.createElement('div')
-    colorDiv.style.backgroundColor = color
-    colorDiv.style.width = '6rem'
-    colorDiv.style.height = '3rem'
-    colorItem.appendChild(colorDiv)
+    colorItem.appendChild(showcolor(color))
 
     list.appendChild(colorItem)
 
     div.appendChild(list)
+
+}
+
+function showcolor(color) {
+
+    //creates the color swatch
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = color
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    return colorDiv
+}
+
+function renderlistitem() {
 
 }
 
